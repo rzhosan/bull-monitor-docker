@@ -21,7 +21,7 @@ trap 'kill ${!}; term_handler' SIGINT SIGTERM EXIT
 
 
 bull-monitor \
-  --redis-uri "redis://${REDIS_HOST}:${REDIS_PORT}" \
+  --redis-uri "redis://${REDIS_HOST}:${REDIS_PORT}/${REDIS_DB}" \
   $($IS_BOOL_MQ && echo "--bullmq") \
   --metrics \
   --max-metrics=${MAX_METRICS} \
