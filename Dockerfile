@@ -2,6 +2,7 @@ FROM node:18.12-alpine
 
 RUN npm install -g @bull-monitor/cli@5.1.0
 COPY entrypoint.sh /
+RUN chmod +x entrypoint.sh
 
 ENV REDIS_HOST=localhost
 ENV REDIS_PORT=6379
